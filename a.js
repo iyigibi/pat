@@ -1,2 +1,2 @@
 var omx = require('omxdirector');
-omx.play('video.avi');
+omx.play('a1.mp4');
