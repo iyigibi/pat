@@ -1,3 +1,11 @@
+var listem=["a1.mp4","a2.mp4","a3.mp4"];
+var index=0;
 var omx = require('omxdirector');
-omx.play('a1.mp4');
-omx.on('stop', function(){omx.play('a3.mp4');});
+next();
+omx.on('stop', function(){next();});
+
+function next(){
+   omx.play(listem[index]);
+  index++;
+  index=index%3;
+}
