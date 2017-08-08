@@ -10,10 +10,9 @@ function next(){
         console.error(e);
         throw e;
     }
-    console.log('stdout ', stdout);
-    console.log('stderr ', omx.play(listem[index]);
-  index++;
-  index=index%3;);
+     omx.play(listem[index]);
+    index++;
+    index=index%3;
 });
 
   
