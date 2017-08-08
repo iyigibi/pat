@@ -14,5 +14,8 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/iyigibi/pat/issues"
+  },
+  "dependencies": {
+    "wallpaper": "^2.5.0"
   }
 }
