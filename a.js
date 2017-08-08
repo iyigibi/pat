@@ -9,3 +9,10 @@ function next(){
   index++;
   index=index%3;
 }
+
+
+const wallpaper = require('wallpaper');
+
+wallpaper.set('a.jpg').then(() => {
+	console.log('done');
+});
