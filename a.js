@@ -5,14 +5,17 @@ next();
 omx.on('stop', function(){next();});
 
 function next(){
-  // omx.play(listem[index]);
+  omx.play(listem[index]);
   index++;
   index=index%3;
 }
 
-
-const wallpaper = require('wallpaper');
- 
-wallpaper.set('a.jpg').then(() => {
-    console.log('done');
+const exec = require('child_process').exec;
+exec('ffmpeg -i '+listem[index]+' -vf "select=eq(n,LAST_FRAME_INDEX)" -vframes 1 LAST_FRAME.PNG', (e, stdout, stderr)=> {
+    if (e instanceof Error) {
+        console.error(e);
+        throw e;
+    }
+    console.log('stdout ', stdout);
+    console.log('stderr ', stderr);
 });
