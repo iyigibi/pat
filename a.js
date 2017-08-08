@@ -7,7 +7,7 @@ next();
 omx.on('stop', function(){next();});
 
 function next(){
-  exec('pqıv -t -f -i a.jpg', (e, stdout, stderr)=> {
+  exec('pqiv -t -f -i a.jpg', (e, stdout, stderr)=> {
     if (e instanceof Error) {
         console.error(e);
         throw e;
