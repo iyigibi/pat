@@ -5,17 +5,19 @@ next();
 omx.on('stop', function(){next();});
 
 function next(){
-  //omx.play(listem[index]);
-  index++;
-  index=index%3;
-}
-
-const exec = require('child_process').exec;
-exec('ffmpeg -i '+listem[index]+' -vframes 1 LAST_FRAME.PNG', (e, stdout, stderr)=> {
+  exec('ffmpeg -i '+listem[index]+' -vframes 1 LAST_FRAME.PNG', (e, stdout, stderr)=> {
     if (e instanceof Error) {
         console.error(e);
         throw e;
     }
     console.log('stdout ', stdout);
-    console.log('stderr ', stderr);
+    console.log('stderr ', omx.play(listem[index]);
+  index++;
+  index=index%3;);
 });
+
+  
+  
+}
+
+const exec = require('child_process').exec;
