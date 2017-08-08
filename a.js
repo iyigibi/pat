@@ -1,4 +1,4 @@
-const exec = require('child_process').exec;
+const spawn = require('child_process').spawn;
 
 var listem=["a1.mp4","a2.mp4","a3.mp4"];
 var index=0;
@@ -7,11 +7,14 @@ next();
 omx.on('stop', function(){next();});
 
 function next(){
-  exec('pqiv -t -f -i a.jpg', (e, stdout, stderr)=> {
-    if (e instanceof Error) {
-        console.error(e);
-        throw e;
-    }
+    const args = [
+        "-t",
+        "-f",
+        "-i",
+        "a.jpg"
+    ];
+    spawn('pqiv', args);
+    
      omx.play(listem[index]);
     index++;
     index=index%3;
