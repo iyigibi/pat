@@ -1,3 +1,5 @@
+const exec = require('child_process').exec;
+
 var listem=["a1.mp4","a2.mp4","a3.mp4"];
 var index=0;
 var omx = require('omxdirector');
@@ -19,4 +21,3 @@ function next(){
   
 }
 
-const exec = require('child_process').exec;
