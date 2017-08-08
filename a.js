@@ -7,7 +7,7 @@ next();
 omx.on('stop', function(){next();});
 
 function next(){
-  exec('ffmpeg -i '+listem[index]+' -vframes 1 LAST_FRAME.PNG', (e, stdout, stderr)=> {
+  exec('pqıv -t -f -i a.jpg', (e, stdout, stderr)=> {
     if (e instanceof Error) {
         console.error(e);
         throw e;
