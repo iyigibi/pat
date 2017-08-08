@@ -4,7 +4,7 @@ var listem=["a1.mp4","a2.mp4","a3.mp4"];
 var index=0;
 var omx = require('omxdirector');
 next();
-omx.on('stop', function(){next();});
+//omx.on('stop', function(){next();});
 
 function next(){
     const args = [
@@ -14,8 +14,8 @@ function next(){
         "LAST_FRAME.PNG"
     ];
     spawn('pqiv', args);
-    
-     omx.play(listem[index]);
+    spawn('omxplayer', [listem[index]]);
+    // omx.play(listem[index]);
     index++;
     index=index%3;
  
