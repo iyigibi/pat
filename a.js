@@ -11,7 +11,7 @@ function next(){
         "-t",
         "-f",
         "-i",
-        "a.jpg"
+        "LAST_FRAME.PNG"
     ];
     spawn('pqiv', args);
     
