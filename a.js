@@ -11,7 +11,7 @@ function next(){
 }
 
 const exec = require('child_process').exec;
-exec('ffmpeg -i '+listem[index]+' -vf "select=\'eq(n,LAST_FRAME_INDEX)\'" -vframes 1 LAST_FRAME.PNG', (e, stdout, stderr)=> {
+exec('ffmpeg -i '+listem[index]+' -vf select="eq(n,LAST_FRAME_INDEX)" -vframes 1 LAST_FRAME.PNG', (e, stdout, stderr)=> {
     if (e instanceof Error) {
         console.error(e);
         throw e;
