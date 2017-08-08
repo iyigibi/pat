@@ -14,11 +14,12 @@ function next(){
         "-i",
         "LAST_FRAME.PNG"
     ];
-    spawn('pqiv', args);
+    
     mu=spawn('omxplayer', [listem[index]]);
     mu.on('close', (code) => {
      next();
     });
+    spawn('pqiv', args);
     // omx.play(listem[index]);
     index++;
     index=index%3;
