@@ -5,7 +5,7 @@ next();
 omx.on('stop', function(){next();});
 
 function next(){
-   omx.play(listem[index]);
+  // omx.play(listem[index]);
   index++;
   index=index%3;
 }
