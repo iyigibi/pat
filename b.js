@@ -1,6 +1,6 @@
 const spawn = require('child_process').spawn;
 
-var listem=["c1.mp4","c2.mp4","c3.mp4"];
+var listem=["l1.mp4","l2.mp4","l3.mp4"];
 var index=0;
 var omx = require('omxdirector');
 var mu;
