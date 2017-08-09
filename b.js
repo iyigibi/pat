@@ -10,7 +10,7 @@ next();
 
 function next(){
 
-    omx.play(['video.mp4', 'anothervideo.mp4', 'foo.mp4'], {loop: true});
+    omx.play(listem, {loop: true});
     index++;
     index=index%3;
  
