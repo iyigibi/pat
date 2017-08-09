@@ -10,11 +10,7 @@ next();
 
 function next(){
 
-    mu=spawn('omxplayer', [listem[index]]);
-    mu.on('close', (code) => {
-        mu.kill();
-        next();
-    });
+    omx.play(['video.mp4', 'anothervideo.mp4', 'foo.mp4'], {loop: true});
     index++;
     index=index%3;
  
