@@ -14,7 +14,6 @@ function next(){
     
     index++;
     index=index%3;
- omx.play(listem[index]);
   
 }
 
