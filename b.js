@@ -43,8 +43,8 @@ var message="OK";
 fs.readFile(filename, 'utf8', function(err, data) {
   if (err) {
          rl.question('Signage isimini giriniz : ', (answer) => {
-            var name_=answer;
-            rl.close();
+            //console.log(`wwww : ${answer}`);
+             var name_=answer;
         });
       rl.question('Şifre giriniz : ', (answer) => {
             var pass_=answer;
