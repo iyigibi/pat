@@ -47,7 +47,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
                 stream.write(message);
                 stream.end();
             });
-
+    return;
   }
     if(data==message){
           console.log(data);
