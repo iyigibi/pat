@@ -25,8 +25,8 @@ var data = JSON.stringify({
 });
 
 var options = {
-  host: 'http://yayin.medya.istanbul/broadcast',
-  path: '/wssignage.asmx/GetDate',
+  host: 'http://yayin.medya.istanbul/broadcast/wssignage.asmx/GetDate',
+  path: '',
   method: 'POST',
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
