@@ -44,12 +44,12 @@ fs.readFile(filename, 'utf8', function(err, data) {
   if (err) {
          rl.question('Signage isimini giriniz : ', (answer) => {
             //console.log(`wwww : ${answer}`);
-             var name_=answer;
+                rl.question('Şifre giriniz : ', (answer2) => {
+                       console.log(`wwww : ${answer}  ${answer}`);
+                    rl.close();
+                });
         });
-      rl.question('Şifre giriniz : ', (answer) => {
-            var pass_=answer;
-            rl.close();
-        });
+      
 /*
       client.RegisterDevice(args, function(err, result) {
           console.log(result.GetDateResult);
