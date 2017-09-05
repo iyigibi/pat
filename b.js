@@ -32,7 +32,7 @@ setInterval(function(){
   client.GetDate(args, function(err, result) {
           console.log(result.GetDateResult);
       });
-}, 5 * 100000);  
+}, 5 * 1000);  
 
 
 
@@ -54,7 +54,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
                                 password: '${answer3}',
                                 token: '${answer2}${answer3}'};
                                   client.RegisterDevice(args2, function(err, result) {
-                                      console.log(result.GetDateResult);
+                                      console.log(result.RegisterDeviceResult);
                                   });
                             rl.close();
                     });
