@@ -22,9 +22,8 @@ function next(){
 
 var soap = require('soap');
   var url = 'http://yayin.medya.istanbul/broadcast/wssignage.asmx';
-  var args = {name: 'value'};
   soap.createClient(url, function(err, client) {
-      client.GetDate(args, function(err, result) {
+      client.GetDate(function(err, result) {
           console.log(result);
       });
   });
