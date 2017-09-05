@@ -35,10 +35,17 @@ setInterval(function(){
 }, 5 * 1000);  
 
 
+
 var fs = require('fs');
-var stream = fs.createWriteStream("my_file.txt");
+var filename="my_file.txt";
+fs.readFile(filename, 'utf8', function(err, data) {
+  if (err) throw err;
+  console.log(data)
+});
+
+
+var stream = fs.createWriteStream(filename);
 stream.once('open', function(fd) {
-  stream.write("My first row\n");
-  stream.write("My second row\n");
+  stream.write("OK");
   stream.end();
 });
