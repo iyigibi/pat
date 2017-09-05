@@ -24,6 +24,6 @@ function next(){
   var args = {name: 'value'};
   soap.createClient(url, function(err, client) {
       client.GetDate(args, function(err, result) {
-          console.log(result);
+          console.log(result.GetDateResult);
       });
   });
