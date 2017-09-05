@@ -25,9 +25,9 @@ var data = JSON.stringify({
 });
 
 var options = {
-  host: 'http://yayin.medya.istanbul',
+  host: 'http://yayin.medya.istanbul/broadcast',
   port: '80',
-  path: '/broadcast/wssignage.asmx/GetDate',
+  path: '/wssignage.asmx/GetDate',
   method: 'POST',
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
