@@ -42,6 +42,15 @@ var message="OK";
 
 fs.readFile(filename, 'utf8', function(err, data) {
   if (err) {
+         rl.question('What do you think of Node.js? ', (answer) => {
+            console.log(`Thank you for your valuable feedback: ${answer}`);
+            rl.close();
+        });
+
+      client.RegisterDevice(args, function(err, result) {
+          console.log(result.GetDateResult);
+      });
+      
             var stream = fs.createWriteStream(filename);
             stream.once('open', function(fd) {
                 stream.write(message);
@@ -55,5 +64,14 @@ fs.readFile(filename, 'utf8', function(err, data) {
     }
   }
 });
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+
 
 
