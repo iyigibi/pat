@@ -55,6 +55,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
                                 token: '${answer2}${answer3}'};
                                   client.RegisterDevice(args2, function(err, result) {
                                       console.log(result.RegisterDeviceResult);
+                                      message=result.RegisterDeviceResult;
                                   });
                             rl.close();
                     });
