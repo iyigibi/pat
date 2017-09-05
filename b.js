@@ -42,8 +42,12 @@ var message="OK";
 
 fs.readFile(filename, 'utf8', function(err, data) {
   if (err) {
-         rl.question('What do you think of Node.js? ', (answer) => {
-            console.log(`Thank you for your valuable feedback: ${answer}`);
+         rl.question('Signage isimini giriniz : ', (answer) => {
+            var name_=answer;
+            rl.close();
+        });
+      rl.question('Şifre giriniz : ', (answer) => {
+            var pass_=answer;
             rl.close();
         });
 /*
