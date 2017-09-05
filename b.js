@@ -46,11 +46,11 @@ fs.readFile(filename, 'utf8', function(err, data) {
             console.log(`Thank you for your valuable feedback: ${answer}`);
             rl.close();
         });
-
+/*
       client.RegisterDevice(args, function(err, result) {
           console.log(result.GetDateResult);
       });
-      
+  */    
             var stream = fs.createWriteStream(filename);
             stream.once('open', function(fd) {
                 stream.write(message);
