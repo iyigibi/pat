@@ -45,7 +45,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
          rl.question('Signage isimini giriniz : ', (answer) => {
             //console.log(`wwww : ${answer}`);
                 rl.question('Şifre giriniz : ', (answer2) => {
-                       console.log(`wwww : ${answer}  ${answer}`);
+                       console.log(`wwww : ${answer}  ${answer2}`);
                     rl.close();
                 });
         });
