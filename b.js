@@ -19,13 +19,33 @@ function next(){
 //ffmpeg -i a3.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts a3.ts
 //ffmpeg -i "concat:a1.ts|a2.ts" -c copy -bsf:a aac_adtstoasc wer.mp4
 
-var operation = 'CelsiusToFahrenheit'
-  , namespace = 'http://www.w3schools.com/webservices/'
-  , action = "http://www.w3schools.com/webservices/CelsiusToFahrenheit"
-  , message = {'Celsius': '23'};
-
-var foam = require('foam');
-
-foam(namespace + 'tempconvert.asmx', operation, action, message, {namespace: namespace}, function (err, result) {
-  console.log(result.CelsiusToFahrenheitResponse.CelsiusToFahrenheitResult);
+var http = require('http');
+var data = JSON.stringify({
+  'id': '2'
 });
+
+var options = {
+  host: 'http://yayin.medya.istanbul',
+  port: '80',
+  path: '/broadcast/wssignage.asmx/GetDate',
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Content-Length': data.length
+  }
+};
+
+var req = http.request(options, function(res) {
+  var msg = '';
+
+  res.setEncoding('utf8');
+  res.on('data', function(chunk) {
+    msg += chunk;
+  });
+  res.on('end', function() {
+    console.log(JSON.parse(msg));
+  });
+});
+
+req.write(data);
+req.end();
