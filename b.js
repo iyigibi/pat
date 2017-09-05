@@ -38,14 +38,20 @@ setInterval(function(){
 
 var fs = require('fs');
 var filename="my_file.txt";
+var message="OK";
+
 fs.readFile(filename, 'utf8', function(err, data) {
   if (err) throw err;
-  console.log(data)
+    if(data==message){
+          console.log(data);
+    }else{
+          console.log(data);
+    }
 });
 
 
 var stream = fs.createWriteStream(filename);
 stream.once('open', function(fd) {
-  stream.write("OK");
+  stream.write(message);
   stream.end();
 });
