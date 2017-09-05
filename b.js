@@ -41,7 +41,14 @@ var filename="my_file.txt";
 var message="OK";
 
 fs.readFile(filename, 'utf8', function(err, data) {
-  if (err) console.log(err);
+  if (err) {
+            var stream = fs.createWriteStream(filename);
+            stream.once('open', function(fd) {
+                stream.write(message);
+                stream.end();
+            });
+
+  }
     if(data==message){
           console.log(data);
     }else{
@@ -50,8 +57,3 @@ fs.readFile(filename, 'utf8', function(err, data) {
 });
 
 
-var stream = fs.createWriteStream(filename);
-stream.once('open', function(fd) {
-  stream.write(message);
-  stream.end();
-});
