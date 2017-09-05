@@ -41,7 +41,7 @@ var filename="my_file.txt";
 var message="OK";
 
 fs.readFile(filename, 'utf8', function(err, data) {
-  if (err) throw err;
+  if (err) console.log(err);
     if(data==message){
           console.log(data);
     }else{
