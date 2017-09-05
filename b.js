@@ -19,32 +19,11 @@ function next(){
 //ffmpeg -i a3.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts a3.ts
 //ffmpeg -i "concat:a1.ts|a2.ts" -c copy -bsf:a aac_adtstoasc wer.mp4
 
-var http = require('http');
-var data = JSON.stringify({
-  'id': '2'
-});
-
-var options = {
-  host: 'http://yayin.medya.istanbul/broadcast/wssignage.asmx/GetDate',
-  path: '',
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json; charset=utf-8',
-    'Content-Length': data.length
-  }
-};
-
-var req = http.request(options, function(res) {
-  var msg = '';
-
-  res.setEncoding('utf8');
-  res.on('data', function(chunk) {
-    msg += chunk;
+  var soap = require('soap');
+  var url = 'http://yayin.medya.istanbul/broadcast/wssignage.asmx?wsdl';
+  var args = {name: 'value'};
+  soap.createClient(url, function(err, client) {
+      client.GetDate(args, function(err, result) {
+          console.log(result);
+      });
   });
-  res.on('end', function() {
-    console.log(JSON.parse(msg));
-  });
-});
-
-req.write(data);
-req.end();
