@@ -26,7 +26,6 @@ var data = JSON.stringify({
 
 var options = {
   host: 'http://yayin.medya.istanbul/broadcast',
-  port: '80',
   path: '/wssignage.asmx/GetDate',
   method: 'POST',
   headers: {
