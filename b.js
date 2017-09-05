@@ -47,13 +47,13 @@ fs.readFile(filename, 'utf8', function(err, data) {
                 stream.write(message);
                 stream.end();
             });
-    return;
-  }
+  }else{
     if(data==message){
           console.log(data);
     }else{
           console.log(data);
     }
+  }
 });
 
 
