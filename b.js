@@ -39,21 +39,30 @@ setInterval(function(){
 var fs = require('fs');
 var filename="my_file.txt";
 var message="OK";
+///
 
+///
 fs.readFile(filename, 'utf8', function(err, data) {
   if (err) {
          rl.question('Signage isimini giriniz : ', (answer) => {
             //console.log(`wwww : ${answer}`);
-                rl.question('Şifre giriniz : ', (answer2) => {
-                       console.log(`wwww : ${answer}  ${answer2}`);
-                    rl.close();
+                rl.question('Kullanıcı adı giriniz : ', (answer2) => {
+                        rl.question('Şifre giriniz : ', (answer3) => {
+                            console.log(`wwww : ${answer}  ${answer2}`);
+                            var args2 = {DeviceName: '${answer}',
+                                username: '${answer2}',
+                                password: '${answer3}',
+                                token: '${answer2}${answer3}'};
+                                  client.RegisterDevice(args2, function(err, result) {
+                                      console.log(result.GetDateResult);
+                                  });
+                            rl.close();
+                    });
                 });
         });
       
 /*
-      client.RegisterDevice(args, function(err, result) {
-          console.log(result.GetDateResult);
-      });
+      
   */    
             var stream = fs.createWriteStream(filename);
             stream.once('open', function(fd) {
