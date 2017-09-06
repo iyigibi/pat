@@ -40,10 +40,11 @@ var fs = require('fs');
 var filename="my_file.txt";
 var message="OK";
 ///
-
+console.log('\033c');
 ///
 fs.readFile(filename, 'utf8', function(err, data) {
   if (err) {
+      
          rl.question('Signage isimini giriniz : ', (answer) => {
                 rl.question('Kullanıcı adı giriniz : ', (answer2) => {
                         rl.question('Şifre giriniz : ', (answer3) => {
@@ -58,6 +59,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
                                             stream.write(JSON.stringify(args2));
                                             stream.end();
                                             args=args2;
+                                            loginIt();
                                         });
                                   });
                             rl.close();
@@ -70,8 +72,8 @@ fs.readFile(filename, 'utf8', function(err, data) {
   */    
             
   }else{
-      console.log('\033c');
           args=JSON.parse(data);
+        loginIt();
   }
 });
 
@@ -83,5 +85,7 @@ const rl = readline.createInterface({
 });
 
 
-
+function loginIt(){
+    console.log("login");
+}
 
