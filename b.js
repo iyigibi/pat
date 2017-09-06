@@ -97,7 +97,7 @@ function loginIt(){
              client.GetPlayList(arg_, function(err, result) {
                  var pp=result.GetPlayListResult;
                 // var json = xsd.stringToFlatJSON(pp.schema,function(errors, obj ){});
-                console.log(pp.schema.element);
+                console.log(pp.schema.element.complexType.element);
              });
       });
 }
