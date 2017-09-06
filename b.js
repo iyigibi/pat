@@ -95,7 +95,7 @@ function loginIt(){
                   token: args.token};
              client.GetPlayList(arg_, function(err, result) {
                  var pp=result.GetPlayListResult.shema
-                console.log(pp.diffgram);
+                console.log(pp);
              });
       });
 }
