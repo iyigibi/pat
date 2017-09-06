@@ -30,7 +30,7 @@ var client;
 
 setInterval(function(){
   client.GetDate(args, function(err, result) {
-          console.log(result.GetDateResult);
+          //console.log(result.GetDateResult);
       });
 }, 5 * 1000);  
 
@@ -52,12 +52,12 @@ fs.readFile(filename, 'utf8', function(err, data) {
                                 password: answer3,
                                 token: "asdasd"};
                                   client.RegisterDevice(args2, function(err, result) {
-                                      console.log(result.RegisterDeviceResult);
                                       message=result.RegisterDeviceResult;
                                       var stream = fs.createWriteStream(filename);
                                         stream.once('open', function(fd) {
                                             stream.write(JSON.stringify(args2));
                                             stream.end();
+                                            args=args2;
                                         });
                                   });
                             rl.close();
@@ -70,11 +70,8 @@ fs.readFile(filename, 'utf8', function(err, data) {
   */    
             
   }else{
-    if(data==message){
-          console.log(JSON.parse(data).DeviceName);
-    }else{
-          console.log(JSON.parse(data).DeviceName);
-    }
+      console.log('\033c');
+          args=JSON.parse(data);
   }
 });
 
