@@ -49,10 +49,10 @@ fs.readFile(filename, 'utf8', function(err, data) {
                 rl.question('Kullanıcı adı giriniz : ', (answer2) => {
                         rl.question('Şifre giriniz : ', (answer3) => {
                             console.log(`wwww : ${answer}  ${answer2}`);
-                            var args2 = {DeviceName: '${answer}',
-                                username: '${answer2}',
-                                password: '${answer3}',
-                                token: '${answer2}${answer3}'};
+                            var args2 = {DeviceName: answer,
+                                username: answer2,
+                                password: answer3,
+                                token: "asdasd"};
                                   client.RegisterDevice(args2, function(err, result) {
                                       console.log(result.RegisterDeviceResult);
                                       message=result.RegisterDeviceResult;
