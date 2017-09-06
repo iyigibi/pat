@@ -25,7 +25,7 @@ function next(){
 var client;
   soap.createClient(url, function(err, client_) {
       client=client_;
-      
+      Go();
   });
 
 setInterval(function(){
@@ -36,12 +36,14 @@ setInterval(function(){
 
 
 
+
 var fs = require('fs');
 var filename="my_file.txt";
 var message="OK";
 ///
 console.log('\033c');
 ///
+function Go(){
 fs.readFile(filename, 'utf8', function(err, data) {
   if (err) {
       
@@ -66,16 +68,13 @@ fs.readFile(filename, 'utf8', function(err, data) {
                     });
                 });
         });
-      
-/*
-      
-  */    
-            
   }else{
           args=JSON.parse(data);
         loginIt();
   }
 });
+};
+///////////////
 
 const readline = require('readline');
 
