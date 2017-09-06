@@ -45,10 +45,8 @@ var message="OK";
 fs.readFile(filename, 'utf8', function(err, data) {
   if (err) {
          rl.question('Signage isimini giriniz : ', (answer) => {
-            //console.log(`wwww : ${answer}`);
                 rl.question('Kullanıcı adı giriniz : ', (answer2) => {
                         rl.question('Şifre giriniz : ', (answer3) => {
-                            console.log(`wwww : ${answer}  ${answer2}`);
                             var args2 = {DeviceName: answer,
                                 username: answer2,
                                 password: answer3,
@@ -58,7 +56,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
                                       message=result.RegisterDeviceResult;
                                       var stream = fs.createWriteStream(filename);
                                         stream.once('open', function(fd) {
-                                            stream.write(message+"|"+answer+"|"+answer2+"|"+answer3);
+                                            stream.write(JSON.stringify(args2));
                                             stream.end();
                                         });
                                   });
@@ -73,9 +71,9 @@ fs.readFile(filename, 'utf8', function(err, data) {
             
   }else{
     if(data==message){
-          console.log(data);
+          console.log(JSON.parse(data));
     }else{
-          console.log(data);
+          console.log(JSON.parse(data));
     }
   }
 });
