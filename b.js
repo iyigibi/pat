@@ -83,6 +83,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+var xsd = require('libxml-xsd');
 
 function loginIt(){
     console.log("login");
@@ -95,7 +96,8 @@ function loginIt(){
                   token: args.token};
              client.GetPlayList(arg_, function(err, result) {
                  var pp=result.GetPlayListResult;
-                console.log(pp);
+                 var schema = xsd.parse(pp);
+                console.log(schema);
              });
       });
 }
