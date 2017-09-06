@@ -83,7 +83,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-var xsd = require('xsd');
+
 
 function loginIt(){
     console.log("login");
@@ -96,7 +96,6 @@ function loginIt(){
                   token: args.token};
              client.GetPlayList(arg_, function(err, result) {
                  var pp=result.GetPlayListResult;
-                // var json = xsd.stringToFlatJSON(pp.schema,function(errors, obj ){});
 				var tl_=pp.diffgram.NewDataSet.TimeLine;
 				for(var i=0;i<tl_.length;i++){
 					var sstr=tl_[i].UPLOAD_PATH;
