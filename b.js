@@ -99,7 +99,7 @@ function loginIt(){
                  var json = xsd.stringToFlatJSON(pp.shema,function(errors, obj ){
                                               // do stuff with the object.
                                             });
-                console.log(json);
+                console.log(pp);
              });
       });
 }
