@@ -97,7 +97,12 @@ function loginIt(){
              client.GetPlayList(arg_, function(err, result) {
                  var pp=result.GetPlayListResult;
                 // var json = xsd.stringToFlatJSON(pp.schema,function(errors, obj ){});
-                console.log(pp.schema.element.complexType.choice);
+				var tl_=pp.diffgram.NewDataSet.TimeLine;
+				for(var i=0;i<tl_.length;i++){
+					var sstr=tl_[i].UPLOAD_PATH;
+					console.log("http://yayin.medya.istanbul/broadcast/upload/"+sstr.substring(0,sstr.lastIndexOf("."))+"_720p.mp4");
+				}
+				
              });
       });
 }
