@@ -69,7 +69,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
                 });
         });
   }else{
-          args=JSON.parse(data);
+        args=JSON.parse(data);
         loginIt();
   }
 });
@@ -87,9 +87,15 @@ const rl = readline.createInterface({
 function loginIt(){
     console.log("login");
     var arg_={username: args.username,
-              pwd: args.password};
+    pwd: args.password};
     client.UserLogin(arg_, function(err, result) {
           console.log(result.UserLoginResult);
+            arg_={DeviceName: args.DeviceName,
+                  Authkey: result.UserLoginResult,
+                  token: args.token};
+             client.GetPlayList(arg_, function(err, result) {
+                console.log(result.GetPlayListResult);
+             });
       });
 }
 
