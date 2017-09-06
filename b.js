@@ -71,9 +71,9 @@ fs.readFile(filename, 'utf8', function(err, data) {
             
   }else{
     if(data==message){
-          console.log(JSON.parse(data.DeviceName));
+          console.log(JSON.parse(data).DeviceName);
     }else{
-          console.log(JSON.parse(data.DeviceName));
+          console.log(JSON.parse(data).DeviceName);
     }
   }
 });
