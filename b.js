@@ -56,6 +56,11 @@ fs.readFile(filename, 'utf8', function(err, data) {
                                   client.RegisterDevice(args2, function(err, result) {
                                       console.log(result.RegisterDeviceResult);
                                       message=result.RegisterDeviceResult;
+                                      var stream = fs.createWriteStream(filename);
+                                        stream.once('open', function(fd) {
+                                            stream.write(message);
+                                            stream.end();
+                                        });
                                   });
                             rl.close();
                     });
@@ -65,11 +70,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
 /*
       
   */    
-            var stream = fs.createWriteStream(filename);
-            stream.once('open', function(fd) {
-                stream.write(message);
-                stream.end();
-            });
+            
   }else{
     if(data==message){
           console.log(data);
