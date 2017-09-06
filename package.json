@@ -16,6 +16,8 @@
     "url": "https://github.com/iyigibi/pat/issues"
   },
   "dependencies": {
+    "omxdirector": "^0.1.2",
+    "soap": "^0.21.0",
     "wallpaper": "^2.5.0"
   }
 }
