@@ -58,7 +58,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
                                       message=result.RegisterDeviceResult;
                                       var stream = fs.createWriteStream(filename);
                                         stream.once('open', function(fd) {
-                                            stream.write(message);
+                                            stream.write(message+"|"+answer+"|"+answer2+"|"+answer3);
                                             stream.end();
                                         });
                                   });
