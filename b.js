@@ -87,7 +87,7 @@ const rl = readline.createInterface({
 
 function loginIt(){
     console.log("login");
-    client.UserLogin ({username: args.username,pwd: args.password}, function(err, result) {
+    client.UserLogin({username: args.username,pwd: args.password}, function(err, result) {
           console.log(result.UserLoginResult);
       });
 }
