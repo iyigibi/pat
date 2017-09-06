@@ -100,6 +100,7 @@ function loginIt(){
 				var tl_=pp.diffgram.NewDataSet.TimeLine;
 				for(var i=0;i<tl_.length;i++){
 					var sstr=tl_[i].UPLOAD_PATH;
+					console.log("buu");
 					console.log("http://yayin.medya.istanbul/broadcast/upload/"+sstr.substring(0,sstr.lastIndexOf("."))+"_720p.mp4");
 				}
 				
