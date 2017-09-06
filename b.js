@@ -94,7 +94,7 @@ function loginIt(){
                   Authkey: result.UserLoginResult,
                   token: args.token};
              client.GetPlayList(arg_, function(err, result) {
-                console.log(result.GetPlayListResult);
+                console.log(result.GetPlayListResult.shema.diffgram.TimeLine);
              });
       });
 }
