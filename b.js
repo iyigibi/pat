@@ -96,7 +96,7 @@ function loginIt(){
                   token: args.token};
              client.GetPlayList(arg_, function(err, result) {
                  var pp=result.GetPlayListResult;
-                 //var json = xsd.stringToFlatJSON(pp.shema,function(errors, obj ){});
+                 var json = xsd.stringToFlatJSON(pp.schema,function(errors, obj ){});
                 console.log(pp);
              });
       });
