@@ -83,7 +83,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-var xsd = require('libxml-xsd');
+var xsd = require('xsd');
 
 function loginIt(){
     console.log("login");
