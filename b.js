@@ -104,8 +104,8 @@ function loginIt(){
 					var url__=sstr.substring(0,sstr.lastIndexOf("."));
 					
 					var url = "http://yayin.medya.istanbul/broadcast/upload/"+url__+"_720p.mp4";
-					var tt_=url.replace(/\//g, '_')
-					var int_=url.lastIndexOf('_');
+					//var tt_=url.replace(/\//g, '_')
+					var int_=url.lastIndexOf('/');
 					var fname_=url.substring(int_,url.length-int_);
 					console.log("buu "+fname_+" "+int_);
 						var options = {
