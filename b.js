@@ -99,11 +99,24 @@ function loginIt(){
 				var tl_=pp.diffgram.NewDataSet.TimeLine;
 				for(var i=0;i<tl_.length;i++){
 					var sstr=tl_[i].UPLOAD_PATH;
-					console.log("buu");
-					console.log("http://yayin.medya.istanbul/broadcast/upload/"+sstr.substring(0,sstr.lastIndexOf("."))+"_720p.mp4");
+					//console.log("buu");
+					//console.log("http://yayin.medya.istanbul/broadcast/upload/"+sstr.substring(0,sstr.lastIndexOf("."))+"_720p.mp4");
+					var url__=sstr.substring(0,sstr.lastIndexOf("."));
+					var fname_=url__.substring(url__.lastIndexOf("/"),-1)+"_720p.mp4";
+					var url = "http://yayin.medya.istanbul/broadcast/upload/"+url__+"_720p.mp4";
+						var options = {
+						    directory: "vids/",
+						    filename: fname_
+						}
+						download(url, options, function(err){
+						    if (err) throw err
+						    console.log("meow "+url)
+						}) 
 				}
 				
              });
       });
 }
 
+
+var download = require('download-file');
