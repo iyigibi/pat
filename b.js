@@ -102,10 +102,11 @@ function loginIt(){
 					//console.log("buu");
 					//console.log("http://yayin.medya.istanbul/broadcast/upload/"+sstr.substring(0,sstr.lastIndexOf("."))+"_720p.mp4");
 					var url__=sstr.substring(0,sstr.lastIndexOf("."));
-					console.log("buu ");
+					
 					var url = "http://yayin.medya.istanbul/broadcast/upload/"+url__+"_720p.mp4";
 					var int_=url.lastIndexOf("/");
-					url.substring(int_,url.length-int_)
+					var fname_=url.substring(int_,url.length-int_);
+					console.log("buu "+fname_);
 						var options = {
 						    directory: "vids/",
 						    filename: fname_
