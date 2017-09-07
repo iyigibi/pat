@@ -168,7 +168,7 @@ function birlestir(gorevler){
 	//ffmpeg -i "concat:a1.ts|a2.ts" -c copy -bsf:a aac_adtstoasc wer.mp4
 	var strgorevler="concat:";
 	for(var i=0;i<gorevler.length;i++){
-		strgorevler+=gorevler[i].directory+gorevler[i].filename+"|";
+		strgorevler+=gorevler[i].directory+gorevler[i].filename+".ts|";
 	}
 	
 	var args_ = ['-y','-i', strgorevler,'-c', 'copy', '-bsf:a', 'aac_adtstoasc', '-f','mpegts','wwwwww.mp4'];
