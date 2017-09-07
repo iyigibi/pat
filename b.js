@@ -100,6 +100,7 @@ function loginIt(){
                  var pp=result.GetPlayListResult;
 				var tl_=pp.diffgram.NewDataSet.TimeLine;
 		     		var gorevsayisi=tl_.length;
+		     		var gorevler=[];
 				for(var i=0;i<gorevsayisi;i++){
 					var sstr=tl_[i].UPLOAD_PATH;
 					//console.log("buu");
@@ -116,11 +117,15 @@ function loginIt(){
 						    directory: "vids/"+dir__,
 						    filename: fname_,
 						
-						}
+						};
+					gorevler.push(options);
 						download(url, options, function(err){
 						    if (err) throw err
 							gorevsayisi--;
 						    console.log("meow "+gorevsayisi);
+							if(gorevsayisi==0){
+								convertAll(gorevler);
+							   }
 							/*
 										var args_ = ['-i', options.directory+"/"+options.filename, '-f',
 											     'mpegts',options.filename+".ts"];
@@ -140,5 +145,10 @@ function loginIt(){
       });
 }
 
+function convertAll(gorevler){
+	for(var i=0;i<gorevler.lenght;i++){
+		console.log('gorev ' + gorevler[i]);
+	}
+}
 
 
