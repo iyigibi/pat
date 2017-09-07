@@ -158,8 +158,9 @@ function convertAll(gorevler){
 				ffmpeg.on('exit',  function (data) {
 				console.log('grep exit: ' + data);
 					offset++;
-					
+					if(offset<gorevler.length){
 					convertAll(gorevler,offset);
+					}
 				});
 				ffmpeg.stderr.on('data', function (data) {
 				console.log('grep stderr: ' + data);
