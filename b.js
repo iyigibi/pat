@@ -124,7 +124,7 @@ function loginIt(){
 							gorevsayisi--;
 						    console.log("meow "+gorevsayisi);
 							if(gorevsayisi == 0){
-								console.log("meow evet");
+								
 								convertAll(gorevler);
 							   }
 							/*
@@ -147,6 +147,7 @@ function loginIt(){
 }
 
 function convertAll(gorevler){
+	console.log("meow evet"+gorevler);
 	for(var i=0;i<gorevler.lenght;i++){
 		console.log('gorev ' + gorevler[i]);
 	}
