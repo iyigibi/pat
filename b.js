@@ -124,7 +124,7 @@ function loginIt(){
 							gorevsayisi--;
 						    console.log("meow "+gorevsayisi);
 							if(gorevsayisi == 0){
-								
+								offset=0;
 								convertAll(gorevler);
 							   }
 							/*
@@ -145,10 +145,10 @@ function loginIt(){
              });
       });
 }
-
+var offset;
 function convertAll(gorevler){
-	for(var i=0;i<gorevler.length;i++){
-		var options=gorevler[i];
+	
+		var options=gorevler[offset];
 		console.log('gorev ' + options.directory+""+options.filename);
 					
 				var args_ = ['-i', options.directory+options.filename, '-f',
@@ -157,6 +157,9 @@ function convertAll(gorevler){
 				console.log('Spawning ffmpeg ' + args_.join(' '));
 				ffmpeg.on('exit',  function (data) {
 				//console.log('grep exit: ' + data);
+					offset++;
+					
+					convertAll(gorevler,offset);
 				});
 				ffmpeg.stderr.on('data', function (data) {
 				//console.log('grep stderr: ' + data);
@@ -164,7 +167,7 @@ function convertAll(gorevler){
 		
 		
 		
-	}
+	
 }
 
 
