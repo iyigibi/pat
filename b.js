@@ -103,7 +103,7 @@ function loginIt(){
 					//console.log("http://yayin.medya.istanbul/broadcast/upload/"+sstr.substring(0,sstr.lastIndexOf("."))+"_720p.mp4");
 					var url__=sstr.substring(0,sstr.lastIndexOf("."));
 					var fname_=url__.substring(url__.lastIndexOf("/"),10)+"_720p.mp4";
-					console.log("buu "+url__);
+					console.log("buu "+url__.lastIndexOf("/"));
 					console.log("buu "+fname_);
 					var url = "http://yayin.medya.istanbul/broadcast/upload/"+url__+"_720p.mp4";
 						var options = {
