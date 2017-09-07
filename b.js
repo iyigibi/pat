@@ -149,7 +149,7 @@ function loginIt(){
 function convertAll(gorevler){
 	for(var i=0;i<gorevler.length;i++){
 		var options=gorevler[i];
-		console.log('gorev ' + options.directory+" "+options.filename);
+		console.log('gorev ' + options.directory+""+options.filename);
 					
 				var args_ = ['-i', options.directory+options.filename, '-f',
 				'mpegts',options.directory+options.filename+".ts"];
