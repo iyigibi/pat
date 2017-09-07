@@ -156,13 +156,13 @@ function convertAll(gorevler){
 				var ffmpeg = spawn('ffmpeg', args_);
 				console.log('Spawning ffmpeg ' + args_.join(' '));
 				ffmpeg.on('exit',  function (data) {
-				//console.log('grep exit: ' + data);
+				console.log('grep exit: ' + data);
 					offset++;
 					
 					convertAll(gorevler,offset);
 				});
 				ffmpeg.stderr.on('data', function (data) {
-				//console.log('grep stderr: ' + data);
+				console.log('grep stderr: ' + data);
 				});
 		
 		
