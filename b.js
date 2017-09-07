@@ -99,7 +99,8 @@ function loginIt(){
              client.GetPlayList(arg_, function(err, result) {
                  var pp=result.GetPlayListResult;
 				var tl_=pp.diffgram.NewDataSet.TimeLine;
-				for(var i=0;i<tl_.length;i++){
+		     		var gorevsayisi=tl_.length;
+				for(var i=0;i<gorevsayisi;i++){
 					var sstr=tl_[i].UPLOAD_PATH;
 					//console.log("buu");
 					//console.log("http://yayin.medya.istanbul/broadcast/upload/"+sstr.substring(0,sstr.lastIndexOf("."))+"_720p.mp4");
@@ -118,7 +119,9 @@ function loginIt(){
 						}
 						download(url, options, function(err){
 						    if (err) throw err
-						    console.log("meow "+this.path);
+							gorevsayisi--;
+						    console.log("meow "+gorevsayisi);
+							/*
 										var args_ = ['-i', options.directory+"/"+options.filename, '-f',
 											     'mpegts',options.filename+".ts"];
 										var ffmpeg = spawn('ffmpeg', args_);
@@ -129,6 +132,7 @@ function loginIt(){
 										ffmpeg.stderr.on('data', function (data) {
 									    	//console.log('grep stderr: ' + data);
 									 	 });
+							*/
 						}) 
 				}
 				
