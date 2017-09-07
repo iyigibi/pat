@@ -106,8 +106,8 @@ function loginIt(){
 					var url = "http://yayin.medya.istanbul/broadcast/upload/"+url__+"_720p.mp4";
 					//var tt_=url.replace(/\//g, '_')
 					var int_=url.lastIndexOf('/');
-					var fname_=url.substring(int_);
-					console.log("buu "+url+" "+int_+" "+fname_);
+					var fname_=url.substring(int_+1);
+					console.log("buu "+fname_);
 						var options = {
 						    directory: "vids/",
 						    filename: fname_
