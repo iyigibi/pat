@@ -123,7 +123,8 @@ function loginIt(){
 						    if (err) throw err
 							gorevsayisi--;
 						    console.log("meow "+gorevsayisi);
-							if(gorevsayisi==0){
+							if(gorevsayisi == 0){
+								console.log("meow evet");
 								convertAll(gorevler);
 							   }
 							/*
