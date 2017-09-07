@@ -21,6 +21,8 @@ function next(){
 const readline = require('readline');
 var download = require('download-file');
   var soap = require('soap');
+var child_process = require('child_process');
+
   var url = 'http://yayin.medya.istanbul/broadcast/wssignage.asmx?wsdl';
   var args = {name: 'value'};
 var client;
