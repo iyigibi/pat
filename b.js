@@ -147,7 +147,7 @@ function loginIt(){
 }
 
 function convertAll(gorevler){
-	console.log("meow evet"+gorevler);
+	console.log("meow evet"+gorevler.length);
 	for(var i=0;i<gorevler.lenght;i++){
 		console.log('gorev ' + gorevler[i]);
 	}
