@@ -107,7 +107,7 @@ function loginIt(){
 					var tt_=url.replace(/\//g, '_')
 					var int_=url.lastIndexOf('_');
 					var fname_=url.substring(int_,url.length-int_);
-					console.log("buu "+fname_+" "+tt_);
+					console.log("buu "+fname_+" "+int_);
 						var options = {
 						    directory: "vids/",
 						    filename: fname_
