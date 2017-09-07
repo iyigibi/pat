@@ -18,7 +18,8 @@ function next(){
 }
 //ffmpeg -i a3.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts a3.ts
 //ffmpeg -i "concat:a1.ts|a2.ts" -c copy -bsf:a aac_adtstoasc wer.mp4
-
+const readline = require('readline');
+var download = require('download-file');
   var soap = require('soap');
   var url = 'http://yayin.medya.istanbul/broadcast/wssignage.asmx?wsdl';
   var args = {name: 'value'};
@@ -76,7 +77,6 @@ fs.readFile(filename, 'utf8', function(err, data) {
 };
 ///////////////
 
-const readline = require('readline');
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -124,4 +124,4 @@ function loginIt(){
 }
 
 
-var download = require('download-file');
+
