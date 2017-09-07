@@ -118,7 +118,7 @@ function loginIt(){
 						}
 						download(url, options, function(err){
 						    if (err) throw err
-						    console.log("meow "+this.url);
+						    console.log("meow "+this.path);
 										var args_ = ['-i', options.directory+"/"+options.filename, '-f',
 											     'mpegts',options.filename+".ts"];
 										var ffmpeg = spawn('ffmpeg', args_);
