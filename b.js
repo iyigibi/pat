@@ -119,7 +119,7 @@ function loginIt(){
 						    if (err) throw err
 						    console.log("meow "+url);
 										var args_ = ['-i', options.directory+"/"+options.filename, '-f',
-											     'mpegts',options.filename];
+											     'mpegts',options.filename+".ts"];
 										var ffmpeg = spawn('ffmpeg', args_);
 										console.log('Spawning ffmpeg ' + args_.join(' '));
 										ffmpeg.on('exit',  function (data) {
