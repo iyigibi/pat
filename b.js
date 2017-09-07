@@ -113,7 +113,8 @@ function loginIt(){
 					console.log("buu "+fname_+" "+dir__);
 						var options = {
 						    directory: "vids/"+dir__,
-						    filename: fname_
+						    filename: fname_,
+						
 						}
 						download(url, options, function(err){
 						    if (err) throw err
@@ -123,10 +124,10 @@ function loginIt(){
 										var ffmpeg = spawn('ffmpeg', args_);
 										console.log('Spawning ffmpeg ' + args_.join(' '));
 										ffmpeg.on('exit',  function (data) {
-									    	console.log('grep exit: ' + data);
+									    	//console.log('grep exit: ' + data);
 									 	 });
 										ffmpeg.stderr.on('data', function (data) {
-									    	console.log('grep stderr: ' + data);
+									    	//console.log('grep stderr: ' + data);
 									 	 });
 						}) 
 				}
