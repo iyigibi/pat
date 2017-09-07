@@ -171,7 +171,7 @@ function birlestir(gorevler){
 		strgorevler+=gorevler[i].directory+gorevler[i].filename+"|";
 	}
 	
-	var args_ = ['-y','-i', strgorevler,'-c', 'copy', '-bsf:a', 'aac_adtstoasc', '-f',"wwwwww.mp4"];
+	var args_ = ['-y','-i', strgorevler,'-c', 'copy', '-bsf:a', 'aac_adtstoasc', '-f','mpegts','wwwwww.mp4'];
 				var ffmpeg = spawn('ffmpeg', args_);
 				console.log('BOSS ffmpeg ' + args_.join(' '));
 				ffmpeg.on('exit',  function (data) {
