@@ -110,7 +110,7 @@ function loginIt(){
 					var dir__=url__.substring(0,int_+1);
 					console.log("buu "+fname_+" "+dir__);
 						var options = {
-						    directory: "vids/",
+						    directory: "vids/"+dir__,
 						    filename: fname_
 						}
 						download(url, options, function(err){
