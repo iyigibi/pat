@@ -149,11 +149,13 @@ function convertAll(gorevler){
 				console.log('grep exit: ' + data);
 					offset++;
 					if(offset<gorevler.length){
-					convertAll(gorevler,offset);
+						convertAll(gorevler,offset);
+					}else{
+						birlestir(gorevler);	
 					}
 				});
 				ffmpeg.stderr.on('data', function (data) {
-				console.log('grep stderr: ' + data);
+					console.log('grep stderr: ' + data);
 				});
 		
 		
@@ -161,4 +163,24 @@ function convertAll(gorevler){
 	
 }
 
+function birlestir(gorevler){
+	
+	//ffmpeg -i "concat:a1.ts|a2.ts" -c copy -bsf:a aac_adtstoasc wer.mp4
+	var strgorevler="concat:";
+	for(var i=0;i<gorevler.length;i++){
+		strgorevler+=gorevler[i].directory+gorevler[i].filename+"|";
+	}
+	
+	var args_ = ['-y','-i', strgorevler,'-c', 'copy', '--bsf:a', 'aac_adtstoasc', '-f',"wwwwww.mp4"];
+				var ffmpeg = spawn('ffmpeg', args_);
+				console.log('BOSS ffmpeg ' + args_.join(' '));
+				ffmpeg.on('exit',  function (data) {
+				console.log('BOSS exit: ' + data);
+					
+				});
+				ffmpeg.stderr.on('data', function (data) {
+					console.log('BOSS stderr: ' + data);
+				});
+	
+}
 
