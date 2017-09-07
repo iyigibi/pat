@@ -106,7 +106,7 @@ function loginIt(){
 					var url = "http://yayin.medya.istanbul/broadcast/upload/"+url__+"_720p.mp4";
 					//var tt_=url.replace(/\//g, '_')
 					var int_=url__.lastIndexOf('/');
-					var fname_=url__.substring(int_+1);
+					var fname_=url__.substring(int_+1)+".mp4";
 					var dir__=url__.substring(0,int_+1);
 					console.log("buu "+fname_+" "+dir__);
 						var options = {
