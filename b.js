@@ -147,9 +147,23 @@ function loginIt(){
 }
 
 function convertAll(gorevler){
-	console.log("meow evet"+gorevler.length);
 	for(var i=0;i<gorevler.length;i++){
-		console.log('gorev ' + gorevler[i].directory+" "+gorevler[i].filename);
+		var options=gorevler[i];
+		console.log('gorev ' + options.directory+" "+options.filename);
+					
+				var args_ = ['-i', options.directory+options.filename, '-f',
+				'mpegts',options.directory+options.filename+".ts"];
+				var ffmpeg = spawn('ffmpeg', args_);
+				console.log('Spawning ffmpeg ' + args_.join(' '));
+				ffmpeg.on('exit',  function (data) {
+				//console.log('grep exit: ' + data);
+				});
+				ffmpeg.stderr.on('data', function (data) {
+				//console.log('grep stderr: ' + data);
+				});
+		
+		
+		
 	}
 }
 
