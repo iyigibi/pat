@@ -151,7 +151,7 @@ function convertAll(gorevler){
 		var options=gorevler[offset];
 		console.log('gorev ' + options.directory+""+options.filename);
 					
-				var args_ = ['-i', options.directory+options.filename, '-f',
+				var args_ = ['-y','-i', options.directory+options.filename, '-f',
 				'mpegts',options.directory+options.filename+".ts"];
 				var ffmpeg = spawn('ffmpeg', args_);
 				console.log('Spawning ffmpeg ' + args_.join(' '));
