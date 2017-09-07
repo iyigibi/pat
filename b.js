@@ -128,16 +128,7 @@ function loginIt(){
 								convertAll(gorevler);
 							   }
 							/*
-										var args_ = ['-i', options.directory+"/"+options.filename, '-f',
-											     'mpegts',options.filename+".ts"];
-										var ffmpeg = spawn('ffmpeg', args_);
-										console.log('Spawning ffmpeg ' + args_.join(' '));
-										ffmpeg.on('exit',  function (data) {
-									    	//console.log('grep exit: ' + data);
-									 	 });
-										ffmpeg.stderr.on('data', function (data) {
-									    	//console.log('grep stderr: ' + data);
-									 	 });
+										
 							*/
 						}) 
 				}
@@ -150,9 +141,8 @@ function convertAll(gorevler){
 	
 		var options=gorevler[offset];
 		console.log('gorev ' + options.directory+""+options.filename);
-					
-				var args_ = ['-y','-i', options.directory+options.filename, '-f',
-				'mpegts',options.directory+options.filename+".ts"];
+					//'-c', 'copy', '-bsf:v', 'h264_mp4toannexb',
+				var args_ = ['-y','-i', options.directory+options.filename,'-c', 'copy', '-bsf:v', 'h264_mp4toannexb', '-f','mpegts',options.directory+options.filename+".ts"];
 				var ffmpeg = spawn('ffmpeg', args_);
 				console.log('Spawning ffmpeg ' + args_.join(' '));
 				ffmpeg.on('exit',  function (data) {
