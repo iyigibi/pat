@@ -142,7 +142,7 @@ function convertAll(gorevler){
 		var options=gorevler[offset];
 		console.log('gorev ' + options.directory+""+options.filename);
 					//'-c', 'copy', '-bsf:v', 'h264_mp4toannexb',
-				var args_ = ['-y','-i', options.directory+options.filename,'-c', 'copy', '-bsf:v', 'h264_mp4toannexb', '-bsf:a', 'aac_adtstoasc', '-f','mpegts',options.directory+options.filename+".ts"];
+				var args_ = ['-y','-i', options.directory+options.filename,'-crf', '0','-tune','fastdecode', '-bsf:v', 'h264_mp4toannexb', '-bsf:a', 'aac_adtstoasc', '-f','mpegts',options.directory+options.filename+".ts"];
 				var ffmpeg = spawn('ffmpeg', args_);
 				console.log('Spawning ffmpeg ' + args_.join(' '));
 				ffmpeg.on('exit',  function (data) {
@@ -170,8 +170,8 @@ function birlestir(gorevler){
 	for(var i=0;i<gorevler.length;i++){
 		strgorevler+=gorevler[i].directory+gorevler[i].filename+".ts|";
 	}
-	
-	var args_ = ['-y','-i', strgorevler,'-c', 'copy','-bsf:v', 'h264_annexbtomp4', '-bsf:a', 'aac_asctoadts', '-f','mp4','wwwwww.mp4'];
+	strgorevler = strgorevler.slice(0, -1);
+	var args_ = ['-y','-i', strgorevler,'-c', 'copy', '-f','mp4','wwwwww.mp4'];
 				var ffmpeg = spawn('ffmpeg', args_);
 				console.log('BOSS ffmpeg ' + args_.join(' '));
 				ffmpeg.on('exit',  function (data) {
