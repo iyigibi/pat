@@ -176,7 +176,8 @@ function birlestir(gorevler){
 				console.log('BOSS ffmpeg ' + args_.join(' '));
 				ffmpeg.on('exit',  function (data) {
 				console.log('BOSS exit: ' + data);
-					
+					listem=["wwwwww.mp4"];
+					next();
 				});
 				ffmpeg.stderr.on('data', function (data) {
 					console.log('BOSS stderr: ' + data);
