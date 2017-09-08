@@ -13,7 +13,7 @@ function next(){
     omx.play(listem[index]);
     
     index++;
-    index=index%3;
+    index=index%listem.length;
   
 }
 //ffmpeg -i a3.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts a3.ts
