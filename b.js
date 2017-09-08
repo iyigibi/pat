@@ -142,7 +142,7 @@ function convertAll(gorevler){
 		var options=gorevler[offset];
 		console.log('gorev ' + options.directory+""+options.filename);
 					//'-c', 'copy', '-bsf:v', 'h264_mp4toannexb',
-				var args_ = ['-y','-i', options.directory+options.filename, '-bsf:v', 'h264_mp4toannexb', '-bsf:a', 'aac_adtstoasc', '-f','mpegts',options.directory+options.filename+".ts"];
+				var args_ = ['-y','-i', options.directory+options.filename,'-c','copy', '-bsf:v', 'h264_mp4toannexb', '-bsf:a', 'aac_adtstoasc', '-f','mpegts',options.directory+options.filename+".ts"];
 				var ffmpeg = spawn('ffmpeg', args_);
 				console.log('Spawning ffmpeg ' + args_.join(' '));
 				ffmpeg.on('exit',  function (data) {
