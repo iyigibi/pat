@@ -171,7 +171,7 @@ function birlestir(gorevler){
 		strgorevler+=gorevler[i].directory+gorevler[i].filename+".ts|";
 	}
 	
-	var args_ = ['-y','-i', strgorevler,'-c', 'copy', '-f','mp4','wwwwww.mp4'];
+	var args_ = ['-y','-i', strgorevler,'-c', 'copy','-bsf:v', 'h264_annexbtomp4', '-bsf:a', 'aac_asctoadts', '-f','mp4','wwwwww.mp4'];
 				var ffmpeg = spawn('ffmpeg', args_);
 				console.log('BOSS ffmpeg ' + args_.join(' '));
 				ffmpeg.on('exit',  function (data) {
