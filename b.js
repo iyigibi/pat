@@ -10,9 +10,9 @@ var ilkkez=true;
 omx.on('stop', function(){next();});
 
 function next(){
-	Go();
+	
     omx.play(listem[index]);
-    
+    Go();
     index++;
     index=index%listem.length;
   
@@ -121,7 +121,7 @@ function loginIt(){
 						};
 					gorevler.push(options);
 						download(url, options, function(err){
-						    if (err) throw err
+						    
 							gorevsayisi--;
 						    console.log("meow "+gorevsayisi);
 							if(gorevsayisi == 0){
