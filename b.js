@@ -5,11 +5,12 @@ var index=0;
 var omx = require('omxdirector');
 var mu;
 var vu;
+var ilkkez=true;
 //next();
 omx.on('stop', function(){next();});
 
 function next(){
-
+	Go();
     omx.play(listem[index]);
     
     index++;
@@ -155,7 +156,7 @@ function convertAll(gorevler){
 					}
 				});
 				ffmpeg.stderr.on('data', function (data) {
-					console.log('grep stderr: ' + data);
+					//console.log('grep stderr: ' + data);
 				});
 		
 		
@@ -177,11 +178,13 @@ function birlestir(gorevler){
 				ffmpeg.on('exit',  function (data) {
 				console.log('BOSS exit: ' + data);
 					listem=["wwwwww.mp4"];
-					next();
-					Go();
+					if(ilkkez){
+						next();
+						ilkkez=false;
+					}
 				});
 				ffmpeg.stderr.on('data', function (data) {
-					console.log('BOSS stderr: ' + data);
+					//console.log('BOSS stderr: ' + data);
 				});
 	
 }
