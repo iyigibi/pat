@@ -6,6 +6,7 @@ var omx = require('omxdirector');
 var mu;
 var vu;
 var ilkkez=true;
+var kez=0;
 //next();
 omx.on('stop', function(){next();});
 
@@ -172,12 +173,14 @@ function birlestir(gorevler){
 		strgorevler+=gorevler[i].directory+gorevler[i].filename+".ts|";
 	}
 	strgorevler = strgorevler.slice(0, -1);
-	var args_ = ['-y','-i', strgorevler,'-c', 'copy','-bsf:a', 'aac_adtstoasc', '-f','mp4','wwwwww.mp4'];
+	var args_ = ['-y','-i', strgorevler,'-c', 'copy','-bsf:a', 'aac_adtstoasc', '-f','mp4','wwwwww'+kez+'.mp4'];
 				var ffmpeg = spawn('ffmpeg', args_);
 				console.log('BOSS ffmpeg ' + args_.join(' '));
 				ffmpeg.on('exit',  function (data) {
 				console.log('BOSS exit: ' + data);
-					listem=["wwwwww.mp4"];
+					listem=["wwwwww"+kez+".mp4"];
+					kez++;
+					kez=kez%2;
 					if(ilkkez){
 						next();
 						ilkkez=false;
