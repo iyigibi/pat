@@ -2,7 +2,7 @@
 ##Used to restart script after connection is lost
 Script=/home/USER/ipcam.sh
 
-xterm -fullscreen -fg black -bg black -e omxplayer -b --live rtsp://user:pass@192.168.xxx.xxx:88/videoMain
+xterm -fullscreen -fg black -bg black -e omxplayer -b --live rtmp://wowza.istweb.tv/dp/fs
 
 ##Find PID of omxplayer.bin
 #The brackets "[ ]" around the n prevent grep from returning itself
