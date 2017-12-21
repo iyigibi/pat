@@ -124,9 +124,9 @@ function loginIt(){
 					gorevler.push(options);
 					
 					if (path.existsSync(options.directory+options.filename)) { 
-					  console.log("dosya var "+i+"/"+gorevsayisi);
+					  console.log("dosya var "+i+"/"+gorevsayisi-1);
 					  
-					  if(gorevsayisi == i && downloadcount==0){
+					  if(gorevsayisi == (i+1) && downloadcount==0){
 								offset=0;
 								convertAll(gorevler);
 							   }
@@ -137,7 +137,8 @@ function loginIt(){
 						download(url, options, function(err){
 						    
 							downloadcount--;
-						    console.log("meow "+downloadcount);
+							console.log(err + "adasdasdasd");
+						    console.log("meoww "+downloadcount);
 							if(downloadcount == 0){
 								offset=0;
 								convertAll(gorevler);
