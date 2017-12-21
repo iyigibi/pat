@@ -11,7 +11,7 @@ var kez=0;
 omx.on('stop', function(){next();});
 
 function next(){
-	
+	console.log("oynatılıyor "+listem[index]);
     omx.play(listem[index]);
     Go();
     index++;
@@ -121,6 +121,16 @@ function loginIt(){
 						
 						};
 					gorevler.push(options);
+					
+					if (path.existsSync(options.directory+options.filename)) { 
+					  console.log("dosya var");
+					  gorevsayisi--;
+					  if(gorevsayisi == 0){
+								offset=0;
+								convertAll(gorevler);
+							   }
+					} else {
+					//////////////////////////////////////////////////////////
 						download(url, options, function(err){
 						    
 							gorevsayisi--;
@@ -133,6 +143,10 @@ function loginIt(){
 										
 							*/
 						}) 
+						/////////////////////////////////////////////////
+						
+					}
+						
 				}
 				
              });
