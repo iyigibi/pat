@@ -127,7 +127,7 @@ function loginIt(){
 						    console.log("meow "+gorevsayisi);
 							if(gorevsayisi == 0){
 								offset=0;
-								//convertAll(gorevler);
+								convertAll(gorevler);
 							   }
 							/*
 										
