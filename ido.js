@@ -37,7 +37,7 @@ setInterval(function(){
   client.GetDate(args, function(err, result) {
           //console.log(result.GetDateResult);
       });
-}, 5 * 1000);  
+}, 50000 * 1000);  
 
 
 
