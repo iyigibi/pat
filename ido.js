@@ -125,7 +125,7 @@ function loginIt(){
 						    
 							gorevsayisi--;
 						    console.log("meow "+gorevsayisi);
-							if(gorevsayisi == 0){
+							if(gorevsayisi <= 0){
 								offset=0;
 								convertAll(gorevler);
 							   }
@@ -141,13 +141,14 @@ function loginIt(){
 var offset;
 function convertAll(gorevler){
 	
-
+listem=[];
 		console.log('gorev başladı');
 		for(var lp=0;lp<gorevler.length;lp++){
 			listem.push(gorevler[lp].directory+gorevler[lp].filename);
 			console.log('gorev eklendi '+gorevler[lp].directory+gorevler[lp].filename);
+			
 		}
-		
+		next();
 				
 				
 		
