@@ -119,6 +119,7 @@ function loginIt(){
 						var options = {
 						    directory: "vids/"+dir__,
 						    filename: fname_,
+							i: i
 						
 						};
 					gorevler.push(options);
@@ -139,6 +140,10 @@ function loginIt(){
 							downloadcount--;
 							console.log(err + "adasdasdasd");
 						    console.log("meoww "+downloadcount);
+							if(err){
+								gorev.splice(options.i, 1);
+								
+							}
 							if(downloadcount == 0){
 								offset=0;
 								convertAll(gorevler);
