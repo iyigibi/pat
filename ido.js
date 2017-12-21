@@ -123,7 +123,7 @@ function loginIt(){
 					gorevler.push(options);
 					
 					if (path.existsSync(options.directory+options.filename)) { 
-					  console.log("dosya var");
+					  console.log("dosya var "+gorevsayisi);
 					  gorevsayisi--;
 					  if(gorevsayisi == 0){
 								offset=0;
