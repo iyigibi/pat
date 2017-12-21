@@ -123,7 +123,7 @@ function loginIt(){
 					gorevler.push(options);
 					
 					if (path.existsSync(options.directory+options.filename)) { 
-					  console.log("dosya var "+gorevsayisi);
+					  console.log("dosya var "+i);
 					  gorevsayisi--;
 					  if(gorevsayisi == 0){
 								offset=0;
@@ -131,6 +131,7 @@ function loginIt(){
 							   }
 					} else {
 					//////////////////////////////////////////////////////////
+					console.log("dosya indirilecek "+i);
 						download(url, options, function(err){
 						    
 							gorevsayisi--;
