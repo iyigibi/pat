@@ -141,7 +141,7 @@ function loginIt(){
 							console.log(err + "adasdasdasd");
 						    console.log("meoww "+downloadcount);
 							if(err){
-								gorev.splice(options.i, 1);
+								gorevler.splice(options.i, 1);
 								
 							}
 							if(downloadcount == 0){
