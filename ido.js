@@ -88,7 +88,7 @@ const rl = readline.createInterface({
 });
 
 
-
+var downloadcount;
 function loginIt(){
     console.log("login");
     var arg_={username: args.username,
@@ -103,6 +103,7 @@ function loginIt(){
 				var tl_=pp.diffgram.NewDataSet.TimeLine;
 		     		var gorevsayisi=tl_.length;
 		     		var gorevler=[];
+					downloadcount=0;
 				for(var i=0;i<gorevsayisi;i++){
 					var sstr=tl_[i].UPLOAD_PATH;
 					//console.log("buu");
@@ -124,19 +125,20 @@ function loginIt(){
 					
 					if (path.existsSync(options.directory+options.filename)) { 
 					  console.log("dosya var "+i+"/"+gorevsayisi);
-					  gorevsayisi--;
-					  if(gorevsayisi == 0){
+					  
+					  if(gorevsayisi == i && downloadcount==0){
 								offset=0;
 								convertAll(gorevler);
 							   }
 					} else {
 					//////////////////////////////////////////////////////////
-					console.log("dosya İNDİİİR "+i+i+"/"+gorevsayisi);
+					console.log("dosya İNDİİİR "+i+"/"+gorevsayisi);
+					downloadcount++;
 						download(url, options, function(err){
 						    
-							gorevsayisi--;
-						    console.log("meow "+gorevsayisi);
-							if(gorevsayisi == 0){
+							downloadcount--;
+						    console.log("meow "+downloadcount);
+							if(downloadcount == 0){
 								offset=0;
 								convertAll(gorevler);
 							   }
