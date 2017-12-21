@@ -127,7 +127,7 @@ function loginIt(){
 						    console.log("meow "+gorevsayisi);
 							if(gorevsayisi == 0){
 								offset=0;
-								convertAll(gorevler);
+								//convertAll(gorevler);
 							   }
 							/*
 										
@@ -141,54 +141,17 @@ function loginIt(){
 var offset;
 function convertAll(gorevler){
 	
-		var options=gorevler[offset];
-		console.log('gorev ' + options.directory+""+options.filename);
-					//'-c', 'copy', '-bsf:v', 'h264_mp4toannexb',
-				var args_ = ['-y','-i', options.directory+options.filename,'-c','copy', '-bsf:v', 'h264_mp4toannexb',  '-f','mpegts',options.directory+options.filename+".ts"];
-				var ffmpeg = spawn('ffmpeg', args_);
-				console.log('Spawning ffmpeg ' + args_.join(' '));
-				ffmpeg.on('exit',  function (data) {
-				console.log('grep exit: ' + data);
-					offset++;
-					if(offset<gorevler.length){
-						convertAll(gorevler,offset);
-					}else{
-						birlestir(gorevler);	
-					}
-				});
-				ffmpeg.stderr.on('data', function (data) {
-					//console.log('grep stderr: ' + data);
-				});
+
+		console.log('gorev başladı');
+		for(var lp=0;lp<gorevler.length;lp++){
+			listem.push(gorevler[lp].directory+gorevler[lp].filename);
+			console.log('gorev eklendi '+gorevler[lp].directory+gorevler[lp].filename);
+		}
+		
+				
+				
 		
 		
 		
 	
 }
-
-function birlestir(gorevler){
-	
-	//ffmpeg -i "concat:a1.ts|a2.ts" -c copy -bsf:a aac_adtstoasc wer.mp4
-	var strgorevler="concat:";
-	for(var i=0;i<gorevler.length;i++){
-		strgorevler+=gorevler[i].directory+gorevler[i].filename+".ts|";
-	}
-	strgorevler = strgorevler.slice(0, -1);
-	var args_ = ['-y','-i', strgorevler,'-c', 'copy','-bsf:a', 'aac_adtstoasc', '-f','mp4','wwwwww'+kez+'.mp4'];
-				var ffmpeg = spawn('ffmpeg', args_);
-				console.log('BOSS ffmpeg ' + args_.join(' '));
-				ffmpeg.on('exit',  function (data) {
-				console.log('BOSS exit: ' + data);
-					listem=["wwwwww"+kez+".mp4"];
-					kez++;
-					kez=kez%2;
-					if(ilkkez){
-						next();
-						ilkkez=false;
-					}
-				});
-				ffmpeg.stderr.on('data', function (data) {
-					//console.log('BOSS stderr: ' + data);
-				});
-	
-}
-
