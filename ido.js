@@ -28,7 +28,7 @@ function next(){
 
 
 
-ar Gpio = require('pigpio').Gpio,
+var Gpio = require('pigpio').Gpio,
   button = new Gpio(4, {
     mode: Gpio.INPUT,
     pullUpDown: Gpio.PUD_DOWN,
