@@ -2,7 +2,7 @@ const spawn = require('child_process').spawn;
 
 var listem=["a1.ts","a2.ts","a3.ts"];
 var index=0;
-var omx = require('omxdirector').enableNativeLoop();;
+var omx = require('omxdirector').enableNativeLoop();
 var mu;
 var vu;
 var ilkkez=true;
@@ -147,28 +147,19 @@ function loginIt(){
 						    console.log("meoww "+downloadcount);
 							if(err){
 								gorevler.splice(options.i, 1);
-								
 							}
 							if(downloadcount == 0){
 								offset=0;
 								convertAll(gorevler);
 							   }
-							/*
-										
-							*/
-						}) 
-						/////////////////////////////////////////////////
-						
+						}) 						
 					}
-						
 				}
-				
              });
       });
 }
 var offset;
 function convertAll(gorevler){
-	
 listem=[];
 		console.log('gorev başladı');
 		for(var lp=0;lp<gorevler.length;lp++){
@@ -176,11 +167,6 @@ listem=[];
 			console.log('gorev eklendi '+gorevler[lp].directory+gorevler[lp].filename);
 			
 		}
-		next();
-				
-				
-		
-		
-		
+		next();	
 	
 }
