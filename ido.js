@@ -104,7 +104,8 @@ function loginIt(){
              client.GetPlayList(arg_, function(err, result) {
                  var pp=result.GetPlayListResult;
 				var tl_=pp.diffgram.NewDataSet.TimeLine;
-		     		var gorevsayisi=tl_.length;
+		     		//var gorevsayisi=tl_.length;
+		   		 var gorevsayisi=10;
 		     		var gorevler=[];
 					downloadcount=0;
 				for(var i=0;i<gorevsayisi;i++){
