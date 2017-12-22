@@ -24,13 +24,23 @@ function next(){
 }
 
 
-var stdin = process.openStdin(); 
-require('tty').setRawMode(true);    
 
-stdin.on('keypress', function (chunk, key) {
-  process.stdout.write('Get Chunk: ' + chunk + '\n');
-  if (key && key.ctrl && key.name == 'c') process.exit();
-});
+
+
+
+var gpio = require('rpi-gpio');
+ 
+gpio.setup(7, gpio.DIR_IN, readInput);
+ 
+function readInput() {
+    gpio.read(7, function(err, value) {
+        console.log('The value is ' + value);
+    });
+}
+
+
+
+
 
 
 //ffmpeg -i a3.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts a3.ts
