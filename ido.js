@@ -28,15 +28,18 @@ function next(){
 
 
 
-var gpio = require('rpi-gpio');
- 
-gpio.setup(7, gpio.DIR_IN, readInput);
- 
-function readInput() {
-    gpio.read(7, function(err, value) {
-        console.log('The value is ' + value);
-    });
-}
+ar Gpio = require('pigpio').Gpio,
+  button = new Gpio(4, {
+    mode: Gpio.INPUT,
+    pullUpDown: Gpio.PUD_DOWN,
+    edge: Gpio.EITHER_EDGE
+  }),
+  led = new Gpio(17, {mode: Gpio.OUTPUT});
+
+button.on('interrupt', function (level) {
+	console.log("basıldıı");
+  led.digitalWrite(level);
+});
 
 
 
