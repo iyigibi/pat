@@ -15,7 +15,11 @@ var path = require('path');
 function next(){
 	console.log("oynatılıyor "+listem[0]);
 	
-    omx.play(listem);
+    omx.play(listem[0]);
+	
+    omx.play(listem[1]);
+	
+    omx.play(listem[2]);
     //Go();
     index++;
     index=index%listem.length;
