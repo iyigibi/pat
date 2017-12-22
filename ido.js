@@ -22,6 +22,17 @@ function next(){
     index=index%listem.length;
   
 }
+
+
+var stdin = process.openStdin(); 
+require('tty').setRawMode(true);    
+
+stdin.on('keypress', function (chunk, key) {
+  process.stdout.write('Get Chunk: ' + chunk + '\n');
+  if (key && key.ctrl && key.name == 'c') process.exit();
+});
+
+
 //ffmpeg -i a3.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts a3.ts
 //ffmpeg -i "concat:a1.ts|a2.ts" -c copy -bsf:a aac_adtstoasc wer.mp4
 const readline = require('readline');
