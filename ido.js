@@ -140,7 +140,7 @@ function loginIt(){
 						download(url, options, function(err){
 						    
 							downloadcount--;
-							console.log(err + "adasdasdasd");
+							console.log(err +"---"+url);
 						    console.log("meoww "+downloadcount);
 							if(err){
 								gorevler.splice(options.i, 1);
