@@ -14,7 +14,7 @@ omx.on('stop', function(){
 var path = require('path'); 
 function next(){
 	console.log("oynatılıyor "+listem[index]);
-    omx.play(listem, {loop: true});
+    omx.play([listem[0],listem[1],listem[2],listem[3]], {loop: true});
     //Go();
     index++;
     index=index%listem.length;
