@@ -106,7 +106,7 @@ function loginIt(){
                  var pp=result.GetPlayListResult;
 				var tl_=pp.diffgram.NewDataSet.TimeLine;
 		     		//var gorevsayisi=tl_.length;
-		   		 var gorevsayisi=10;
+		   		 var gorevsayisi=4;
 		     		var gorevler=[];
 					downloadcount=0;
 				for(var i=0;i<gorevsayisi;i++){
