@@ -29,8 +29,8 @@ function next(){
 
 var Gpio_ = require('pigpio');
 var Gpio = Gpio_.Gpio;
-
-Gpio_.initialize()
+Gpio_.configureSocketPort(8889);
+//Gpio_.initialize()
 var  button = new Gpio(4, {
     mode: Gpio.INPUT,
     pullUpDown: Gpio.PUD_DOWN,
