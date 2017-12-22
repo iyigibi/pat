@@ -11,7 +11,11 @@ var tanitim=false;
 //next();
 omx.on('stop', function(){
 	console.log("oynattım ");
+	if(tanitim){
+		omx.play("a1.mp4");}else{
+			
 	next();
+		}
 });
 var path = require('path'); 
 function next(){
@@ -43,7 +47,7 @@ var  led = new Gpio(17, {mode: Gpio.OUTPUT});
 button.on('interrupt', function (level) {
 	console.log("basıldıı");
 	if(!tanitim){
-		omx.play("a1.mp4");
+		omx.stop();
 		tanitim=true;
 	
 	}
