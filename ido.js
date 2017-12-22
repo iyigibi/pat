@@ -13,7 +13,7 @@ omx.on('stop', function(){
 });
 var path = require('path'); 
 function next(){
-	console.log("oynatılıyor "+listem.concat("-"));
+	console.log("oynatılıyor "+listem[0]);
 	
     omx.play(listem[0]);
     //Go();
