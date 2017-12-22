@@ -7,6 +7,7 @@ var mu;
 var vu;
 var ilkkez=true;
 var kez=0;
+var tanitim=false;
 //next();
 omx.on('stop', function(){
 	console.log("oynattım ");
@@ -15,7 +16,7 @@ omx.on('stop', function(){
 var path = require('path'); 
 function next(){
 	console.log("oynatılıyor "+listem);
-	
+	tanitim=false;
     omx.play(listem[index]);
     //Go();
     index++;
@@ -41,6 +42,12 @@ var  led = new Gpio(17, {mode: Gpio.OUTPUT});
 
 button.on('interrupt', function (level) {
 	console.log("basıldıı");
+	if(!tanitim){
+		omx.play("a1.mp4");
+		tanitim=true;
+	
+	}
+		
   led.digitalWrite(level);
 });
 
