@@ -60,6 +60,7 @@ fs.readFile(filename, 'utf8', function(err, data) {
                             var args2 = {DeviceName: answer,
                                 username: answer2,
                                 password: answer3,
+				timeout: 5000,
                                 token: "asdasd"};
                                   client.RegisterDevice(args2, function(err, result) {
                                       message=result.RegisterDeviceResult;
