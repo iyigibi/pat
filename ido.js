@@ -9,17 +9,14 @@ var ilkkez=true;
 var kez=0;
 //next();
 omx.on('stop', function(){
-	//next();
+	console.log("oynattım ");
+	next();
 });
 var path = require('path'); 
 function next(){
-	console.log("oynatılıyor "+listem[0]);
+	console.log("oynatılıyor "+listem);
 	
-    omx.play(listem[0]);
-	
-    omx.play(listem[1]);
-	
-    omx.play(listem[2]);
+    omx.play(listem[index]);
     //Go();
     index++;
     index=index%listem.length;
