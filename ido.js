@@ -8,7 +8,9 @@ var vu;
 var ilkkez=true;
 var kez=0;
 //next();
-omx.on('stop', function(){//next();});
+omx.on('stop', function(){
+	//next();
+});
 var path = require('path'); 
 function next(){
 	console.log("oynatılıyor "+listem[index]);
