@@ -2,7 +2,7 @@ const spawn = require('child_process').spawn;
 
 var listem=["a1.ts","a2.ts","a3.ts"];
 var index=0;
-var omx = require('omxdirector').enableNativeLoop();
+var omx = require('omxdirector');
 var mu;
 var vu;
 var ilkkez=true;
@@ -15,7 +15,7 @@ var path = require('path');
 function next(){
 	console.log("oynatılıyor "+listem[0]);
 	
-    omx.play(listem, {loop: true});
+    omx.play(listem);
     //Go();
     index++;
     index=index%listem.length;
