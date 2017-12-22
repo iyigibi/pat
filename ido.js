@@ -12,7 +12,8 @@ var tanitim=false;
 omx.on('stop', function(){
 	console.log("oynattım ");
 	if(tanitim){
-		omx.play("a1.mp4");}else{
+		omx.play("a1.mp4");
+	tanitim=false}else{
 			
 	next();
 		}
